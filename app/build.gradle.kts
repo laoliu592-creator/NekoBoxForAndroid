@@ -10,6 +10,13 @@ plugins {
 setupApp()
 
 android {
+    // 1. 添加 defaultConfig 锁定只打 arm64-v8a 64位架构
+    defaultConfig {
+        ndk {
+            abiFilters.add("arm64-v8a")
+        }
+    }
+
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
     }
